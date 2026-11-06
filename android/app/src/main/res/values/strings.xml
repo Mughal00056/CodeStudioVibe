@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CodeX Studio</string>
+    <string name="title_activity_main">CodeX Studio</string>
+    <string name="package_name">com.codexstudio.ide</string>
+    <string name="custom_url_scheme">codexstudio</string>
+</resources>

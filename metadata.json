@@ -1,0 +1,6 @@
+{
+  "name": "CodeX Studio",
+  "description": "Full-featured mobile and desktop IDE with CodeMirror 6 editing, xterm.js shell terminal, HTML/CSS/JS live preview, file manager, Git integration, and extensible plugins.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

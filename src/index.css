@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --ide-bg-primary: #F8FAFC;
+    --ide-bg-secondary: #FFFFFF;
+    --ide-bg-elevated: #F1F5F9;
+    --ide-border: #E2E8F0;
+    --ide-text-primary: #0F172A;
+    --ide-text-secondary: #475569;
+    --ide-accent: #2563EB;
+  }
+
+  .dark {
+    --ide-bg-primary: #0B0E14;
+    --ide-bg-secondary: #111620;
+    --ide-bg-elevated: #171D2B;
+    --ide-border: #1E2636;
+    --ide-text-primary: #E6EDF3;
+    --ide-text-secondary: #8B949E;
+    --ide-accent: #3B82F6;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dark body {
+    letter-spacing: 0.005em;
+  }
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* CodeMirror 6 Full-Height & Mobile Touch Optimization */
+.cm-editor {
+  height: 100% !important;
+  width: 100% !important;
+  outline: none !important;
+}
+
+.cm-scroller {
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cm-gutters {
+  user-select: none;
+}
+
+/* xterm.js Container Sizing */
+.xterm {
+  height: 100%;
+  width: 100%;
+  padding: 8px 10px;
+}
+
+.xterm-viewport {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Subtle Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Mobile Safe Area Utilities */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
